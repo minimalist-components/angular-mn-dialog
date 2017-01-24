@@ -1,0 +1,2 @@
+"use strict";function MnDialog(){function open(id){var dialog=document.querySelector("mn-dialog#"+id);dialog&&dialog.open()}function close(){var dialog=document.querySelector("mn-dialog.visible");dialog&&dialog.close()}function toggle(id){var dialog=document.querySelector("mn-dialog#"+id);dialog&&dialog.toggle()}this.open=open,this.close=close,this.toggle=toggle}angular.module("mn-dialog",[]),angular.module("mn-dialog").service("MnDialog",MnDialog);
+//# sourceMappingURL=angular-mn-dialog.js.map

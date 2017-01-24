@@ -1,0 +1,41 @@
+html(ng-app='app')
+  meta(name='viewport' content='width=device-width, user-scalable=no')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans')
+  link(rel='stylesheet' href='styles/vendor.css')
+  style.
+    body {
+      font-family: 'Open Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+body(ng-controller='IndexController as controller')
+  h1 mn-dialog
+
+  button(open-dialog='menu') show menu
+  button(open-dialog='another') show another
+
+  mn-dialog#menu
+    button(close-dialog) close
+
+  mn-dialog.right#another
+    button(close-dialog) close
+
+  script(src='vendor.js')
+  script(src='angular-mn-dialog.js')
+  script.
+    angular.module('app', [
+      'mn-dialog',
+    ]);
+
+    angular
+      .module('app')
+      .controller('IndexController', IndexController);
+
+    function IndexController(MnDialog) {
+      MnDialog.open('menu')
+      window.setTimeout(function() {
+        MnDialog.close()
+      }, 2000)
+    }
+
