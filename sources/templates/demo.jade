@@ -1,0 +1,140 @@
+html(ng-app='app')
+  meta(name='viewport' content='width=device-width, user-scalable=no')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
+
+  block styles
+    link(rel='stylesheet' href='docs/vendor.css')
+
+  style.
+
+    mn-sidenav h2 {font-weight: normal}
+    .mn-table-list .mn-item {padding: 1em 2em}
+
+body(ng-controller='IndexController as controller')
+  h2 angular-mn-dialog
+  include github-corner
+
+  .mn-layout-fullscreen.mn-layout-centered
+    .mn-layout-container
+      div.mn-layout-row.align-center
+        button.mn-button(open-dialog='dialog1') Show dialog 1
+        button.mn-button(open-dialog='dialog2') Show dialog 2
+
+  mn-dialog.padding-title#dialog1
+    header
+      h2 Title of dialog 1
+      button.mn-button.action(close-dialog): .zmdi.zmdi-close
+    .mn-table-list
+      a.mn-item(href='' close-dialog)
+        span John Snow
+        span iknownothing@snow.com
+
+      a.mn-item(href='' close-dialog)
+        span Daenerys Targaryen
+        span motherofdragons@targaryens.com
+
+      a.mn-item(href='' close-dialog)
+        span Tyrion Lannister
+        span theimp@lannisters.com
+
+    //- .mn-layout-row.align-end
+      button.mn-button(open-dialog='dialog2') Show dialog 2
+
+  mn-dialog.padding#dialog2
+    header
+      h2 Title of dialog 2
+      button.mn-button.action(close-dialog): .zmdi.zmdi-close
+
+    div
+      p Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+
+      p Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper.
+
+      p Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+
+      p Cras mattis consectetur purus sit amet fermentum. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec ullamcorper nulla non metus auctor fringilla.
+
+      p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+
+      p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+
+    .mn-layout-row.align-end
+      button.mn-button(open-dialog='dialog1') Show dialog 1
+
+  .docs.mn-layout-container
+    mn-code.sh.
+      npm install --save angular-mn-dialog
+
+    p And bundle dependencies and main files in <strong>dist/</strong> with your preferred tool.
+
+    h3 usage
+    mn-code.js.
+      // add dependency in you module
+      angular.module('app', [
+        'mn-dialog'
+      ])
+
+    p Add to your html, the tag <strong class="tag">mn-dialog</strong> and assign to it an <strong>id</strong>, e.g.
+
+    mn-code.html.
+      <mn-dialog id="example">
+        <!-- here goes the content of your dialog -->
+      </mn-dialog>
+
+    p and to open this dialog, you can add to any element (we suggest a button), the attibute <strong>open-dialog</strong> with id as value, e.g.
+
+    mn-code.html.
+      <!-- when click in the button, dialog will be opened -->
+      <button open-dialog="example">Open dialog</button>
+
+    p For more details check <a href="https://github.com/minimalist-components/mn-dialog">mn-dialog docs</a>.
+
+    h3 Service
+    p Now, about service, you can use the service <strong>$mnDialog</strong>, like below
+
+    mn-code.js.
+      angular
+        .module('app')
+        .controller('HomeController', HomeController)
+
+      function HomeController($mnDialog) {
+        // to open, call method open with id of dialog
+        $mnDialog.open('example')
+
+        // to close dialog visible, just call .close()
+        $mnDialog.close()
+      }
+
+
+  block scripts
+    script(src='docs/vendor.js')
+    script(src='dist/angular-mn-dialog.js')
+
+  script.
+    var links = document.querySelectorAll('mn-dialog a[href]')
+    Array
+        .from(links)
+        .forEach(function(link) {
+          link.addEventListener('click', preventDefault)
+        })
+
+    function preventDefault(event) {
+      event.preventDefault()
+    }
+
+  script.
+    angular.module('app', [
+      'mn-dialog',
+    ])
+
+    angular
+      .module('app')
+      .controller('IndexController', IndexController);
+
+    function IndexController($mnDialog) {
+      //- $mnDialog.open('dialog1')
+      //- window.setTimeout(function() {
+      //-   $mnDialog.close()
+      //- }, 2000)
+    }
+

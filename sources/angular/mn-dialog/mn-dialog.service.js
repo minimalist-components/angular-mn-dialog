@@ -1,6 +1,6 @@
 angular
   .module('mn-dialog')
-  .service('MnDialog', MnDialog)
+  .service('$mnDialog', MnDialog)
 
 function MnDialog() {
   this.open = open
