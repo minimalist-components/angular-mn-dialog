@@ -8,6 +8,13 @@ module.exports = {
     ],
     dest: './docs/',
   },
+  styles: {
+    src: './sources/styles/*.scss',
+    watch: './sources/styles/**/*.scss',
+    dest: './dist/',
+    sourcemaps: '/sources/styles',
+    output: 'angular-mn-password.css',
+  },
   scripts: {
     src: [
       './sources/angular/**/*.js',
