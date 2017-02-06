@@ -8,7 +8,7 @@ A angular service to [mn-dialog](https://github.com/minimalist-components/mn-dia
 
 See the [demo](https://github.com/minimalist-components/angular-mn-dialog)
 
-[![preview demo](https://raw.githubusercontent.com/minimalist-components/mn-sidenav/master/preview.gif)](https://minimalist-components.github.io/angular-mn-sidenav/)
+[![preview demo](https://raw.githubusercontent.com/minimalist-components/mn-dialog/master/preview.gif)](https://minimalist-components.github.io/angular-mn-dialog/)
 
 ### Install
 
@@ -16,7 +16,7 @@ See the [demo](https://github.com/minimalist-components/angular-mn-dialog)
 npm install --save angular-mn-dialog
 ```
 
-And bundle dependencies and main files in [dist/](https://github.com/minimalist-components/mn-sidenav/tree/master/dist) with your preferred tool.
+And bundle dependencies and main files in [dist/](https://github.com/minimalist-components/mn-dialog/tree/master/dist) with your preferred tool.
 
 ### Usage
 

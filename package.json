@@ -1,6 +1,6 @@
 {
   "name": "angular-mn-dialog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a angular service to mn-dialog",
   "main": "dist/angular-mn-dialog.js",
   "files": [
