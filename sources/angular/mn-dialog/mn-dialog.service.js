@@ -7,10 +7,6 @@ function MnDialog() {
   this.close = close
   this.toggle = toggle
 
-  // Array
-  //   .from(document.querySelectorAll(`mn-dialog`))
-  //   .forEach(dialog => dialog.clickOutside(false))
-
   function open(id) {
     const dialog = document.querySelector(`mn-dialog#${id}`)
     if (dialog) {
