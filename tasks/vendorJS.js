@@ -1,7 +1,7 @@
 import gulp from 'gulp'
 import packageFiles from 'package-files'
 import concat from 'gulp-concat'
-import uglify from 'gulp-uglify'
+// import uglify from 'gulp-uglify'
 
 gulp.task('vendorJS', vendorJSTask)
 
@@ -28,6 +28,6 @@ function vendorJSTask() {
   return gulp
     .src(dependencies)
     .pipe(concat('vendor.js'))
-    .pipe(uglify())
+    // .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('./docs'))
 }
