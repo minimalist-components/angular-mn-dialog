@@ -1,6 +1,6 @@
 {
   "name": "angular-mn-dialog",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "a angular service to mn-dialog",
   "main": "dist/angular-mn-dialog.js",
   "files": [
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "angular": "^1.6.1",
-    "mn-dialog": "~0.0.5"
+    "mn-dialog": "~0.0.6"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.14.0",
